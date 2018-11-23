@@ -1,0 +1,19 @@
+matrix:
+    include:
+      - language: csharp
+        mono: none
+        dotnet: 2.1
+        before_script:
+            - cd Backend
+        script:
+            - dotnet restore
+            - dotnet build
+            - dotnet tests
+      - language: node_js
+        node_js:
+            - "8"
+        before_script:
+            - npm install -g @angular/cli
+        script:
+            - ng build --prod --aot
+            - ng test
