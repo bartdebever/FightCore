@@ -8,11 +8,12 @@ matrix:
         script:
             - dotnet restore
             - dotnet build
-            - dotnet tests
+            - dotnet test
       - language: node_js
         node_js:
             - "8"
         before_script:
+            - cd Frontend
             - npm install -g @angular/cli
         script:
             - ng build --prod --aot
