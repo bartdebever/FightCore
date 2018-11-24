@@ -22,3 +22,10 @@ matrix:
             - npm install
         script:
             - ng build --prod
+      - language: java
+        dist: trusty
+        addons:
+            sonarcloud:
+                organization: "bartdebever-github"
+        script:
+            - sonar-scanner
