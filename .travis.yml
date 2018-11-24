@@ -29,13 +29,10 @@ matrix:
         mono: none 
         dotnet: 2.1.401
 
-        solution: ToolBox/ToolBox.csproj
-
         install:
             - cd Backend
             - dotnet tool install --global dotnet-sonarscanner
             - dotnet restore
-            - dotnet restore ToolBox.Tests/ToolBox.Tests.csproj
 
         before_script:
             - export PATH="$PATH:$HOME/.dotnet/tools"
