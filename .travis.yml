@@ -39,7 +39,7 @@ matrix:
         script:
             - dotnet sonarscanner begin /k:"fightcore-ci-test" /n:"FightCore" /v:"1" /o:"bartdebever-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="$SONAR_TOKEN"
             - dotnet build
-            - dotnet sonarscanner end
+            - dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN" || true
         cache:
             directories:
                 - '$HOME/.nuget/packages'
